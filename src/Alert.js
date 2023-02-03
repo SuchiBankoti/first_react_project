@@ -6,9 +6,9 @@ export default function Alert(props) {
   return (
     <div className={alertbox ? "alert" : "no-alert"}>
       <h2 className="heading">Invalid input</h2>
-      {!formdata.name && !formdata.age ? (
+      {!formdata.name || !formdata.age || !formdata.college ? (
         <div className="msg-box">
-          please enter a valid name and age(non-empty values)
+          please enter a valid name ,age and college name(non-empty values)
         </div>
       ) : !formdata.age || formdata.age < 0 ? (
         <div className="msg-box">please enter a valid age(greater than 0)</div>

@@ -11,7 +11,12 @@ function App() {
   const [users, setUsers] = useState([]);
   const [alertbox, setAlertbox] = useState(false);
   function addUser(formdata) {
-    if (!formdata.name || !formdata.age || !formdata.age < 0) {
+    if (
+      !formdata.name ||
+      !formdata.age ||
+      !formdata.age < 0 ||
+      !formdata.college
+    ) {
       setAlertbox(true);
     } else {
       setUsers((prev) => [...prev, formdata]);
