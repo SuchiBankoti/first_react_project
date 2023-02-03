@@ -30,6 +30,16 @@ export default function Form(props) {
             onChange={handleChange}
           ></input>
         </label>
+        <label>
+          College name
+          <br />
+          <input
+            type="text"
+            value={formdata.college}
+            name="college"
+            onChange={handleChange}
+          ></input>
+        </label>
       </form>
       <br />
       <button onClick={() => addUser(formdata)}>Add User</button>

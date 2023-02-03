@@ -6,6 +6,7 @@ function App() {
   const [formdata, setFormdata] = useState({
     name: "",
     age: "",
+    college: "",
   });
   const [users, setUsers] = useState([]);
   const [alertbox, setAlertbox] = useState(false);
