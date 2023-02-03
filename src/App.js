@@ -14,14 +14,14 @@ function App() {
     if (
       !formdata.name ||
       !formdata.age ||
-      !formdata.age < 0 ||
+      formdata.age < 0 ||
       !formdata.college
     ) {
       setAlertbox(true);
     } else {
       setUsers((prev) => [...prev, formdata]);
       setFormdata((prev) => {
-        return { ...prev, name: "", age: "" };
+        return { ...prev, name: "", age: "", college: "" };
       });
     }
   }
@@ -44,11 +44,7 @@ function App() {
           {allUsers}
         </div>
       </div>
-      <Alert
-        formdata={formdata}
-        alertbox={alertbox}
-        setAlertbox={setAlertbox}
-      />
+      {alertbox ? <Alert formdata={formdata} setAlertbox={setAlertbox} /> : ""}
     </div>
   );
 }
